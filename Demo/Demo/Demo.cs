@@ -73,13 +73,13 @@ namespace Demo
                     Length(_validationOptions[1]);
                     return true;
                 case 3:
-                    IsNullOrWhiteSpace();
+                    IsNullOrWhiteSpace(_validationOptions[2]);
                     return true;
                 case 4:
-                    IntTryParse();
+                    IntTryParse(_validationOptions[3]);
                     return true;
                 case 5:
-                    IntRange();
+                    IntRange(_validationOptions[4]);
                     return true;
                 case 6:
                     TitleCase();
@@ -196,7 +196,7 @@ namespace Demo
             UI.Header(title, ConsoleColor.Green);
 
             UI.ChangeForeground("\r\nThis demo option will demonstrate how to validate" +
-                "a user response within a specific Length.\r\n\r\n\r\n", ConsoleColor.Gray);
+                " a user response within a specific Length.\r\n\r\n\r\n", ConsoleColor.Gray);
 
             UI.Footer("Please enter a lower limit (integer): ");
 
@@ -234,8 +234,6 @@ namespace Demo
 
             Console.Clear();
 
-            Console.Clear();
-
             UI.Header(title, ConsoleColor.Green);
 
             UI.ChangeForeground($"\r\nLower limit: {num}" +
@@ -258,19 +256,103 @@ namespace Demo
 
         }
 
-        private static void IsNullOrWhiteSpace()
+        private static void IsNullOrWhiteSpace(string title)
         {
+            Console.Clear();
+
+            UI.Header(title, ConsoleColor.Green);
+
+            UI.ChangeForeground("\r\nThis demo option will demonstrate validation" +
+                "against user response that is left blank.\r\n\r\n\r\n", ConsoleColor.Gray);
+
+            UI.Footer("Please enter a response to return to the menu: ");
+
+            string response = Console.ReadLine();
+
+            Validation.ForString(response);
 
         }
 
-        private static void IntTryParse()
+        private static void IntTryParse(string title)
         {
+            Console.Clear();
+
+            UI.Header(title, ConsoleColor.Green);
+
+            UI.ChangeForeground("\r\nThis demo option will demonstrate validation" +
+                "against user response that cannot be parsed into an integer.\r\n\r\n\r\n", ConsoleColor.Gray);
+
+            UI.Footer("Please enter an integer to return to the menu: ");
+
+            string response = Console.ReadLine();
+
+            Validation.ForInt(response);
 
         }
 
-        private static void IntRange()
+        private static void IntRange(string title)
         {
+            Console.Clear();
 
+            UI.Header(title, ConsoleColor.Green);
+
+            UI.ChangeForeground("\r\nThis demo option will demonstrate how to validate" +
+                " a user response within a specific range of integers.\r\n\r\n\r\n", ConsoleColor.Gray);
+
+            UI.Footer("Please enter a lower limit (integer): ");
+
+            string response = Console.ReadLine();
+
+            int num = Validation.ForInt(response);
+
+            Console.Clear();
+
+            UI.Header(title, ConsoleColor.Green);
+
+            UI.ChangeForeground($"\r\nLower limit: {num}\r\n\r\n\r\n", ConsoleColor.Gray);
+
+            UI.Footer("Please enter an upper limit (integer): ");
+
+            response = Console.ReadLine();
+
+            int num2 = Validation.ForInt(response);
+
+            while (num2 <= num)
+            {
+                Console.Clear();
+
+                UI.Header(title, ConsoleColor.Green);
+
+                UI.ChangeForeground($"\r\nThe upper limit should be higher than the lower limit!\r\n\r\n" +
+                    $"Lower limit: {num}\r\n\r\n\r\n", ConsoleColor.Gray);
+
+                UI.Footer("Please enter an upper limit (integer): ");
+
+                response = Console.ReadLine();
+
+                num2 = Validation.ForInt(response);
+            }
+
+            Console.Clear();
+
+            UI.Header(title, ConsoleColor.Green);
+
+            UI.ChangeForeground($"\r\nLower limit: {num}" +
+                $"\r\nUpper limit: {num2}\r\n\r\n\r\n", ConsoleColor.Gray);
+
+            UI.Footer($"Please type in a number between {num} and {num2}: ");
+
+            response = Console.ReadLine();
+
+            Validation.IntRange("integer", num, num2, response);
+
+            Console.Clear();
+
+            UI.Header(title, ConsoleColor.Green);
+
+            UI.ChangeForeground("\r\nWell done! Returning to menu...\r\n", ConsoleColor.Gray);
+
+            Continue();
         }
 
         private static void TitleCase()
