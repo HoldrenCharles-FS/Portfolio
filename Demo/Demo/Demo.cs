@@ -195,6 +195,66 @@ namespace Demo
 
             UI.Header(title, ConsoleColor.Green);
 
+            UI.ChangeForeground("\r\nThis demo option will demonstrate how to validate" +
+                "a user response within a specific Length.\r\n\r\n\r\n", ConsoleColor.Gray);
+
+            UI.Footer("Please enter a lower limit (integer): ");
+
+            string response = Console.ReadLine();
+
+            int num = Validation.ForInt(response);
+
+            Console.Clear();
+
+            UI.Header(title, ConsoleColor.Green);
+
+            UI.ChangeForeground($"\r\nLower limit: {num}\r\n\r\n\r\n", ConsoleColor.Gray);
+
+            UI.Footer("Please enter an upper limit (integer): ");
+
+            response = Console.ReadLine();
+
+            int num2 = Validation.ForInt(response);
+
+            while (num2 <= num)
+            {
+                Console.Clear();
+
+                UI.Header(title, ConsoleColor.Green);
+
+                UI.ChangeForeground($"\r\nThe upper limit should be higher than the lower limit!\r\n\r\n" +
+                    $"Lower limit: {num}\r\n\r\n\r\n", ConsoleColor.Gray);
+
+                UI.Footer("Please enter an upper limit (integer): ");
+
+                response = Console.ReadLine();
+
+                num2 = Validation.ForInt(response);
+            }
+
+            Console.Clear();
+
+            Console.Clear();
+
+            UI.Header(title, ConsoleColor.Green);
+
+            UI.ChangeForeground($"\r\nLower limit: {num}" +
+                $"\r\nUpper limit: {num2}\r\n\r\n\r\n", ConsoleColor.Gray);
+
+            UI.Footer($"Please type in a string with a length between {num} and {num2}: ");
+
+            response = Console.ReadLine();
+
+            response = Validation.Length("string", num, num2, response);
+
+            Console.Clear();
+
+            UI.Header(title, ConsoleColor.Green);
+
+            UI.ChangeForeground("\r\nWell done! Returning to menu...\r\n", ConsoleColor.Gray);
+
+            Continue();
+
 
         }
 
