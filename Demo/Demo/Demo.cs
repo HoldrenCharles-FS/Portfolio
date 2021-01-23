@@ -9,7 +9,7 @@ namespace Demo
 
         private readonly List<string> _categories = new List<string>()
         {
-            "- VALIDATION FOR USER INPUT -", "- UI / FORMATTING -"
+            "- VALIDATION METHODS -", "- FORMATTING METHODS -"
         };
 
         private readonly List<string> _validationOptions = new List<string>()

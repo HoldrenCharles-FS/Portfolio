@@ -28,8 +28,10 @@ namespace Demo
                 {
                     Console.WriteLine($"[{i}] {option}");
                     i++;
-                }
+                } 
             }
+
+            Console.WriteLine("\r\n[0] Exit");
 
             UI.Footer("Please select an option: ");
         }
