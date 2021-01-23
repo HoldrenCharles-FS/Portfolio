@@ -30,6 +30,8 @@ namespace Demo
                     i++;
                 }
             }
+
+            UI.Footer("Please select an option: ");
         }
     }
 }

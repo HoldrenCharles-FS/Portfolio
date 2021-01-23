@@ -19,9 +19,9 @@ namespace Demo
                 }
                 else
                 {
-                    Console.WriteLine($"That {subject} has already been taken.");
+                    Console.WriteLine($"Do not enter a {subject} from the list above.");
                 }
-                response = Console.ReadLine();
+                response = Console.ReadLine().ToUpper();
             }
 
             return response;
