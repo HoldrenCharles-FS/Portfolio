@@ -58,7 +58,7 @@ namespace Demo
             // Add line 1
             Dasher(text);
             // new line, write title
-            UI.ChangeForeground($"\r\n{text}\r\n", c);
+            ChangeForeground($"\r\n{text}\r\n", c);
             // Add line 2
             Dasher(text);
             // New line

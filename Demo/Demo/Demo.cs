@@ -82,10 +82,10 @@ namespace Demo
                     IntRange(_validationOptions[4]);
                     return true;
                 case 6:
-                    TitleCase();
+                    TitleCase(_uiOptions[0]);
                     return true;
                 case 7:
-                    Header();
+                    Header(_uiOptions[1]);
                     return true;
                 case 8:
                     Footer();
@@ -107,7 +107,7 @@ namespace Demo
         {
             Console.Clear();
 
-            UI.Header("Exitiing...", ConsoleColor.Red);
+            UI.Header("Exiting...", ConsoleColor.Red);
 
             Console.WriteLine("\r\nYou may close this window at anytime.");
 
@@ -355,14 +355,118 @@ namespace Demo
             Continue();
         }
 
-        private static void TitleCase()
+        private static void TitleCase(string title)
         {
+            Console.Clear();
+
+            UI.Header(title, ConsoleColor.Green);
+
+            UI.ChangeForeground("\r\nThis demo option will demonstrate a formatting" +
+                " method that converts passed text into Title Case.\r\n\r\n\r\n", ConsoleColor.Gray);
+
+            UI.Footer("Please enter a title: ");
+
+            string response = Console.ReadLine();
+
+            response = Validation.ForString(response);
+
+            if (response.Split().Length > 1)
+            {
+                
+                string[] words = response.Split();
+
+                response = "";
+
+                foreach (string word in words)
+                {
+                    response += " " + UI.TitleCase(word);
+                }
+            }
+            else
+            {
+                response = UI.TitleCase(response);
+            }
+            Console.Clear();
+
+            UI.Header("Preview", ConsoleColor.Green);
+
+            Console.WriteLine($"\r\n{response}\r\n");
+
+            Continue();
+
 
         }
 
-        private static void Header()
+        private static void Header(string title)
         {
+            Console.Clear();
 
+            UI.Header(title, ConsoleColor.Green);
+
+            UI.ChangeForeground("\r\nThis demo option will demonstrate a formatting" +
+                " method that converts passed text into a Header.\r\n\r\n\r\n", ConsoleColor.Gray);
+
+            UI.Footer("Please type in a header: ");
+
+            string response = Console.ReadLine();
+
+            response = Validation.ForString(response);
+
+            Console.Clear();
+
+            UI.Header(title, ConsoleColor.Green);
+
+            List<string> colors = new List<string>()
+            {
+                "Black", "Blue", "Cyan", "DarkBlue", "DarkCyan", "DarkGray",
+                "DarkGreen", "DarkMagenta", "DarkRed", "DarkYellow", "Gray",
+                "Green", "Magenta", "Red", "White", "Yellow"
+            };
+
+            for (int i = 0; i < colors.Count; i++)
+            {
+                if (i == 0)
+                {
+                    UI.ChangeForeground($"[{i + 1}] {colors[i]}", ConsoleColor.Gray);
+                }
+                else
+                {
+                    UI.ChangeForeground($"\r\n[{i + 1}] {colors[i]}", ConsoleColor.Gray);
+                }
+            }
+
+            Console.WriteLine("\r\n\r\n");
+            UI.Footer("Select a color by it's number option: ");
+
+            string response2 = Console.ReadLine();
+
+            int num = Validation.IntRange("color", 1, 16, response2);
+
+            if (response2.StartsWith('D'))
+            {
+                string[] words = response2.Split();
+
+                response2 = "";
+
+                foreach (string word in words)
+                {
+                    response2 += UI.TitleCase(word);
+                }
+            }
+            else
+            {
+                response2 = UI.TitleCase(response2);
+            }
+
+            ConsoleColor c = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), colors[num - 1]);
+
+            Console.Clear();
+
+            UI.Header(response, c);
+
+            UI.ChangeForeground("\r\nPreview generated.\r\n\r\n", ConsoleColor.Green);
+
+            Continue();
         }
 
         private static void Footer()
