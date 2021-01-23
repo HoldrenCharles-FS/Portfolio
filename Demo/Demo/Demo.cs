@@ -88,7 +88,7 @@ namespace Demo
                     Header(_uiOptions[1]);
                     return true;
                 case 8:
-                    Footer();
+                    Footer(_uiOptions[2]);
                     return true;
                 case 9:
                     ChangeForeground();
@@ -469,9 +469,32 @@ namespace Demo
             Continue();
         }
 
-        private static void Footer()
+        private static void Footer(string title)
         {
+            Console.Clear();
 
+            UI.Header(title, ConsoleColor.Green);
+
+            UI.ChangeForeground("\r\nThis demo option will demonstrate a formatting" +
+                " method that converts passed text into a Footer.\r\n\r\n\r\n", ConsoleColor.Gray);
+
+            UI.Footer("Please type in a message: ");
+
+            string response = Console.ReadLine();
+
+            response = Validation.ForString(response);
+
+            Console.Clear();
+
+            UI.Header("Preview", ConsoleColor.Green);
+
+            Console.WriteLine("\r\n\r\n");
+
+            UI.Footer(response);
+
+            Console.WriteLine("\r\n\r\n");
+
+            Continue();
         }
 
         private static void ChangeForeground()
