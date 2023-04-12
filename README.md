@@ -23,11 +23,16 @@ My name is Charles Holdren, I'm an aspiring software developer who loves taking 
 
 ### Education
 Application Development Fundamentals (Certificate)
+
 Full Sail University
+
 07/2020 - 02/2021
 
+
 Computer Science Bachelor of Science
+
 Full Sail University
+
 02/2021 - 05/2023
 
 ### Articles
