@@ -21,6 +21,7 @@ My name is Charles Holdren, I'm an aspiring software developer who loves taking 
   * UML (Unified Modeling Language)
   * Databases
   * Scrum
+  * Software Architecture
 
 ## Education
 Application Development Fundamentals (Certificate)<br>
