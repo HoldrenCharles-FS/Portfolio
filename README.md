@@ -22,7 +22,7 @@ My name is Charles Holdren, I'm an aspiring software developer who loves taking 
   * Databases
   * Scrum
 
-### Education
+## Education
 Application Development Fundamentals (Certificate)<br>
 Full Sail University<br>
 07/2020 - 02/2021<br><br>
@@ -36,7 +36,7 @@ Full Sail University<br>
 - [Blogspot](https://cfholdren.blogspot.com/)
 - [LinkedIn](https://www.linkedin.com/in/charlesholdrenii/)
 
-### Articles
+## Articles
 
 - [Git: Feature Branch Workflow](https://holdrencharles-fs.github.io/Portfolio/docs/Holdren-Charles-Feature-Branch-Workflow)
 - [Unified Modeling Language](https://holdrencharles-fs.github.io/Portfolio/docs/Unified%20Modeling%20Language/HoldrenCharles-UnifiedModelingLanguage)
