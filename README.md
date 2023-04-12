@@ -32,6 +32,10 @@ Computer Science Bachelor of Science<br>
 Full Sail University<br>
 02/2021 - 05/2023<br>
 
+## Links
+- [Blogspot](https://cfholdren.blogspot.com/)
+- [LinkedIn](https://www.linkedin.com/in/charlesholdrenii/)
+
 ### Articles
 
 - [Git: Feature Branch Workflow](https://holdrencharles-fs.github.io/Portfolio/docs/Holdren-Charles-Feature-Branch-Workflow)
