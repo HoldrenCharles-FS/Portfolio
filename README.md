@@ -35,6 +35,7 @@ Full Sail University<br>
 
 ## Links
 - [LinkedIn](https://www.linkedin.com/in/chasdev/)
+- [Full Sail Profile](https://fullsail-csm.symplicity.com/profiles/chasdev)
 
 ## Articles
 
