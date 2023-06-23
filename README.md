@@ -34,8 +34,7 @@ Full Sail University<br>
 02/2021 - 05/2023<br>
 
 ## Links
-- [Blogspot](https://cfholdren.blogspot.com/)
-- [LinkedIn](https://www.linkedin.com/in/charlesholdrenii/)
+- [LinkedIn](https://www.linkedin.com/in/chasdev/)
 
 ## Articles
 
